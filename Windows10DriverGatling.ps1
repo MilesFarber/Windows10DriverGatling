@@ -1,4 +1,3 @@
-Read-Host -Prompt "Press Enter to start the script"
 try {
 	Set-ExecutionPolicy Unrestricted -Scope CurrentUser
 	$CurrentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
@@ -15,9 +14,10 @@ try {
 		[System.Diagnostics.Process]::Start($ElevatedProcess)
 		Exit
 	}
-	
+ 	
 	$directory = $PSScriptRoot # Get the directory of the script file
-	Write-Output "Script is running in $directory ."
+	Write-Output "Script is running in $directory . MAKE SURE THIS IS THE CORRECT FOLDER AND THERE'S ABSOLUTELY NOTHING INSIDE IT EXCEPT THE DRIVER YOU WANT TO INSTALL. THIS OPERATION CANNOT BE REVERSED."
+ 	Read-Host -Prompt "Press Enter to start the script"
 	$infiles = Get-ChildItem -Path $directory -Filter *.inf -Recurse -File
 	foreach ($infile in $infiles) {
 		Write-Output "Attempting to install $infile . Pass 1..."
