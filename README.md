@@ -5,6 +5,5 @@ This is a Gatling Gun PS1 file that scans for all .inf files in the current fold
 ## There's usually a reason driver installers do this. You should only run this if you know what you're doing, if you have absolutely no other choice and you cannot install the specific version of Windows that your driver requires. You run this script at your own risk.
 
 1. Put your driver in its own folder. MAKE SURE THERE ARE NO OTHER DRIVERS OR SUBFOLDERS IN THE FOLDER WHERE YOU PUT YOUR DRIVER.
-2. Select this code: `Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/MilesFarber/Windows10DriverGatling/trainer/Windows10DriverGatling.ps1'))`
-3. Right click and run a new Administrator Powershell window ***in the same directory as your driver.***
-4. Paste the code and run it.
+2. Place the Windows10DriverGatling.ps1 in the root of the folder that contains all drivers. `Invoke-Expression` doesn't work, I have no idea why.
+3. Right click and run the .ps1 file.
